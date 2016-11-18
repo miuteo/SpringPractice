@@ -17,4 +17,15 @@
         <constructor-arg value="12" type="int"></constructor-arg>
         <constructor-arg value="Teo" type="java.lang.String"></constructor-arg>
     </bean>
+    <bean id="a1" class="com.javatpoint.DI.Address">
+        <constructor-arg value="Bucuresti"></constructor-arg>
+        <constructor-arg value="Muntenia"></constructor-arg>
+        <constructor-arg value="Romania"></constructor-arg>
+    </bean>
+    <bean id="employeeWithAddress" class="com.javatpoint.DI.Employee">
+        <constructor-arg value="1" type="int"></constructor-arg>
+        <constructor-arg value="Teo Miu"></constructor-arg>
+        <constructor-arg ref="a1"></constructor-arg>
+    </bean>
+
 </beans>

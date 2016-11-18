@@ -25,10 +25,8 @@ public class Test2 {
 
         Employee s4 = (Employee) context.getBean("employeeBothConstrArg");
         s4.show();
-//  Resource r=new ClassPathResource("com\\\\javatpoint\\\\DI\\\\applicationContext.xml");
-//        BeanFactory factory=new XmlBeanFactory(r);
-//
-//        Employee s=(Employee)factory.getBean("employee");
-//        s.show();
+
+        Employee s5 = (Employee) context.getBean("employeeWithAddress");
+        s5.show();
     }
 }
