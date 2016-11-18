@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="studentbean" class="com.javatpoint.DI.Student">
+        <property name="name" value="Teodor Miu"></property>
+    </bean>
+    <bean id="employee" class="com.javatpoint.DI.Employee"></bean>
+
+    <bean id="employeeID" class="com.javatpoint.DI.Employee">
+        <constructor-arg value="10" type="int"></constructor-arg>
+    </bean>
+    <bean id="employeeTypeDefault" class="com.javatpoint.DI.Employee">
+        <constructor-arg value="11"></constructor-arg>
+    </bean>
+    <bean id="employeeBothConstrArg" class="com.javatpoint.DI.Employee">
+        <constructor-arg value="12" type="int"></constructor-arg>
+        <constructor-arg value="Teo" type="java.lang.String"></constructor-arg>
+    </bean>
+</beans>

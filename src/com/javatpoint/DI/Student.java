@@ -1,4 +1,4 @@
-package com.javatpoint1;
+package com.javatpoint.DI;
 
 /**
  * Created by Ionela on 11/18/2016.
