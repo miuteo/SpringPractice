@@ -27,5 +27,41 @@
         <constructor-arg value="Teo Miu"></constructor-arg>
         <constructor-arg ref="a1"></constructor-arg>
     </bean>
-
+    <bean id="firstQuestion" class="com.javatpoint.DI.CIWithCollection.Question">
+        <constructor-arg value="1" type="int"></constructor-arg>
+        <constructor-arg value="What is java?"></constructor-arg>
+        <constructor-arg >
+            <list>
+            <value>Java is a programming language</value>
+            <value>Java is a platform</value>
+            <value>Java is an Island of Indonesia</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="an1" class="com.javatpoint.DI.CIWithCollection2.Answer">
+        <constructor-arg value="1" type="int"></constructor-arg>
+        <constructor-arg value="Java is a programming language"></constructor-arg>
+        <constructor-arg value="Teo"></constructor-arg>
+    </bean>
+    <bean id="an2" class="com.javatpoint.DI.CIWithCollection2.Answer">
+        <constructor-arg value="2" type="int"></constructor-arg>
+        <constructor-arg value="Java is a platform"></constructor-arg>
+        <constructor-arg value="Ionela"></constructor-arg>
+    </bean>
+    <bean id="an3" class="com.javatpoint.DI.CIWithCollection2.Answer">
+        <constructor-arg value="3" type="int"></constructor-arg>
+        <constructor-arg value="Java is an Island of Indonesia"></constructor-arg>
+        <constructor-arg value="Axy"></constructor-arg>
+    </bean>
+    <bean id="2ndQuestion" class="com.javatpoint.DI.CIWithCollection2.Question">
+        <constructor-arg value="1" type="int"></constructor-arg>
+        <constructor-arg value="What is Java?"></constructor-arg>
+        <constructor-arg >
+            <list>
+                <ref bean="an1"></ref>
+                <ref bean="an2"></ref>
+                <ref bean="an3"></ref>
+            </list>
+        </constructor-arg>
+    </bean>
 </beans>
