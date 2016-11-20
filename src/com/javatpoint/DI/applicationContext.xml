@@ -64,4 +64,15 @@
             </list>
         </constructor-arg>
     </bean>
+    <bean id="questionMap" class="com.javatpoint.DI.CIWithMap.Question">
+        <constructor-arg value ="1"></constructor-arg>
+        <constructor-arg value = "What is Java?"></constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="Java is a Programming Language" value="Teo"></entry>
+                <entry key="Java is a Platform" value="Ionela"></entry>
+                <entry key="Java is an Island" value="Axy"></entry>
+            </map>
+        </constructor-arg>
+    </bean>
 </beans>
