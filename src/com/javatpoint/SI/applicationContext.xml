@@ -19,5 +19,17 @@
         <property name="id" value="1"></property>
         <property name="name" value="Teo"></property>
     </bean>
+    <!--si with Collection-->
+    <bean id="question" class="com.javatpoint.SI.Collection.Question">
+        <property name="name" value="What is java?"></property>
+        <property name="id" value="1"></property>
+        <property name="answers">
+            <set>
+                <value>Java is a programming language</value>
+                <value>Java is a platform</value>
+                <value>Java is an Island</value>
+            </set>
+        </property>
+    </bean>
 
 </beans>
