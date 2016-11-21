@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="a" class="com.javatpoint.DI.factoryMethod.A" factory-method="getA"></bean>
+    <bean id="p" class="com.javatpoint.DI.factoryMethod.PrintableFactory"  factory-method="getPrintable"></bean>
+
+    <bean id = "pfcatory" class="com.javatpoint.DI.factoryMethod.PrintableFactory"></bean>
+    <bean id = "p2" class="com.javatpoint.DI.factoryMethod.PrintableFactory"  factory-bean="pfcatory"></bean>
+</beans>
