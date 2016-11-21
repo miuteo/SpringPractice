@@ -7,5 +7,17 @@
         <property name="city" value="Bucharest"></property>
         <property name="name" value="Teo Miu"></property>
     </bean>
+    <!--dependentObject-->
+    <bean id="address" class="com.javatpoint.SI.dependentObject.Address">
+        <property name="addressLine1" value="addressLineExample"></property>
+        <property name="city" value="Bucharest"></property>
+        <property name="country" value="Romania"></property>
+        <property name="state" value="Muntenia"></property>
+    </bean>
+    <bean id="employee2" class="com.javatpoint.SI.dependentObject.Employee">
+        <property name="address" ref="address"></property>
+        <property name="id" value="1"></property>
+        <property name="name" value="Teo"></property>
+    </bean>
 
 </beans>
