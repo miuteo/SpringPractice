@@ -31,5 +31,32 @@
             </set>
         </property>
     </bean>
+    <!--Collection2-->
+    <bean id="answer" class="com.javatpoint.SI.Collection2.Answer">
+        <property name="name" value="Java is a programming language"></property>
+        <property name="by" value="Teo"></property>
+        <property name="id" value="1"></property>
+    </bean>
+    <bean id="answer2" class="com.javatpoint.SI.Collection2.Answer">
+        <property name="name" value="Java is a platform"></property>
+        <property name="by" value="Ionela"></property>
+        <property name="id" value="2"></property>
+    </bean>
+    <bean id="answer3" class="com.javatpoint.SI.Collection2.Answer">
+        <property name="name" value="Java is an Island"></property>
+        <property name="by" value="Ionela"></property>
+        <property name="id" value="3"></property>
+    </bean>
+    <bean id="question2" class="com.javatpoint.SI.Collection2.Question">
+        <property name="id" value="1"></property>
+        <property name="name" value="What is Java?"></property>
+        <property name="answers">
+            <list>
+                <ref bean="answer"></ref>
+                <ref bean="answer2"></ref>
+                <ref bean="answer3"></ref>
+            </list>
+        </property>
+    </bean>
 
 </beans>
