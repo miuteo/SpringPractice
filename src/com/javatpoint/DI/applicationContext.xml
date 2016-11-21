@@ -108,4 +108,20 @@
             </map>
         </constructor-arg>
     </bean>
+
+    <!--inerhitingBean-->
+    <bean id="employeeInherit" class="com.javatpoint.DI.inheritingBean.Employee">
+        <constructor-arg value="1"></constructor-arg>
+        <constructor-arg value="Teo Miu"></constructor-arg>
+    </bean>
+    <bean id="addressInherit" class="com.javatpoint.DI.inheritingBean.Address">
+        <constructor-arg value="adresa 1"></constructor-arg>
+        <constructor-arg value="Bucharest"></constructor-arg>
+        <constructor-arg value="Muntenia"></constructor-arg>
+        <constructor-arg value="Romania"></constructor-arg>
+    </bean>
+    <bean id="employeeInherit2" class="com.javatpoint.DI.inheritingBean.Employee" parent="employeeInherit">
+        <constructor-arg ref="addressInherit"></constructor-arg>
+    </bean>
+    <!--end inerhitingBean-->
 </beans>
