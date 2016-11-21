@@ -58,5 +58,17 @@
             </list>
         </property>
     </bean>
+    <!--map-->
+    <bean id="questionMap" class="com.javatpoint.SI.map.Question">
+        <property name="id" value="1"></property>
+        <property name="name" value="What is java?"></property>
+        <property name="answers">
+            <map>
+                <entry key="Java is a programming language" value="Teo"></entry>
+                <entry key="Java is a platform" value="Ionela"></entry>
+                <entry key="Java is an island" value="Axy"></entry>
+            </map>
+        </property>
+    </bean>
 
 </beans>
