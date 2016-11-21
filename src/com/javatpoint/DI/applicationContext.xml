@@ -75,4 +75,37 @@
             </map>
         </constructor-arg>
     </bean>
+    <bean id="answer1" class="com.javatpoint.DI.CIWithMap2.Answer">
+        <constructor-arg value="1"></constructor-arg>
+        <constructor-arg value="Java is a Programming Language"></constructor-arg>
+        <constructor-arg value="12/12/2001"></constructor-arg>
+    </bean>
+    <bean id="answer2" class="com.javatpoint.DI.CIWithMap2.Answer">
+        <constructor-arg value="2"></constructor-arg>
+        <constructor-arg value="Java is a Platform"></constructor-arg>
+        <constructor-arg value="12/12/2003"></constructor-arg>
+    </bean>
+
+    <bean id="user1" class="com.javatpoint.DI.CIWithMap2.User">
+        <constructor-arg value="1"></constructor-arg>
+        <constructor-arg value="Teo Miu"></constructor-arg>
+        <constructor-arg value="miu.teo@gmail.com"></constructor-arg>
+    </bean>
+    <bean id="user2" class="com.javatpoint.DI.CIWithMap2.User">
+        <constructor-arg value="2"></constructor-arg>
+        <constructor-arg value="Ionela"></constructor-arg>
+        <constructor-arg value="ionela@ionela.com"></constructor-arg>
+    </bean>
+
+
+    <bean id="questionMap2" class="com.javatpoint.DI.CIWithMap2.Question">
+        <constructor-arg value = "1"></constructor-arg>
+        <constructor-arg value = "What is Java"></constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key-ref="answer1" value-ref="user1"></entry>
+                <entry key-ref="answer2" value-ref="user2"></entry>
+            </map>
+        </constructor-arg>
+    </bean>
 </beans>
