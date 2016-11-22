@@ -20,6 +20,7 @@
       <root url="jar://$PROJECT_DIR$/lib/spring-tx-4.3.4.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-core-4.3.4.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-test-4.3.4.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
