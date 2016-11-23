@@ -18,7 +18,8 @@ public class Test {
 //        System.out.println(employeeDao.saveEmployeeByPreparedStatement(new Employee(2,"Ionela",1000)));
 
 
-        List<Employee> list = employeeDao.getAllEmployees();
+//        List<Employee> list = employeeDao.getAllEmployees();
+        List<Employee> list = employeeDao.getAllEmployeesRowMapper();
         for(Employee e : list){
             System.out.println(e);
         }

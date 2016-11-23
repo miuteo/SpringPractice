@@ -4,6 +4,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -69,6 +70,18 @@ public class EmployeeDao {
                 }
 
                 return list;
+            }
+        });
+    }
+    public List<Employee> getAllEmployeesRowMapper(){
+        return jdbcTemplate.query("select * from employee", new RowMapper<Employee>() {
+            @Override
+            public Employee mapRow(ResultSet resultSet, int i) throws SQLException {
+                Employee e = new Employee();
+                e.setId(resultSet.getInt(1));
+                e.setName(resultSet.getString(2));
+                e.setSalary(resultSet.getInt(3));
+                return e;
             }
         });
     }
