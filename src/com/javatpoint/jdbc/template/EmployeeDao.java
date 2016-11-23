@@ -3,9 +3,13 @@ package com.javatpoint.jdbc.template;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.ResultSetExtractor;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Ionela on 11/22/2016.
@@ -48,6 +52,23 @@ public class EmployeeDao {
                 preparedStatement.setString(2,e.getName());
                 preparedStatement.setFloat(3,e.getSalary());
                 return preparedStatement.execute();
+            }
+        });
+    }
+    public List<Employee> getAllEmployees(){
+        return jdbcTemplate.query("select * from employee", new ResultSetExtractor<List<Employee>>() {
+            @Override
+            public List<Employee> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List<Employee> list = new ArrayList<Employee>();
+                while(resultSet.next()){
+                    Employee e = new Employee();
+                    e.setId(resultSet.getInt(1));
+                    e.setName(resultSet.getString(2));
+                    e.setSalary(resultSet.getInt(3));
+                    list.add(e);
+                }
+
+                return list;
             }
         });
     }
