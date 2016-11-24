@@ -12,6 +12,7 @@ public class Test {
     public static void main(String[]args){
         ApplicationContext context = new ClassPathXmlApplicationContext("com\\javatpoint\\jdbc\\template\\applicationContext.xml");
         EmployeeDao employeeDao = context.getBean("edao",EmployeeDao.class);
+        EmpDaoNamed empDaoNamed = context.getBean("edaoNamed",EmpDaoNamed.class);
 //        int rez = employeeDao.saveEmployee(new Employee(1,"Teo",1000));
 //        System.out.println(rez);
 
@@ -19,6 +20,7 @@ public class Test {
 
 
 //        List<Employee> list = employeeDao.getAllEmployees();
+        empDaoNamed.save(new Employee(3,"Axy",1000));
         List<Employee> list = employeeDao.getAllEmployeesRowMapper();
         for(Employee e : list){
             System.out.println(e);

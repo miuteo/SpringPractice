@@ -11,9 +11,19 @@
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="ds"></property>
     </bean>
+
+    <bean id="jdbcNamedTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="ds"></constructor-arg>
+    </bean>
     <bean id="edao" class="com.javatpoint.jdbc.template.EmployeeDao">
         <constructor-arg ref="jdbcTemplate"></constructor-arg>
         <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
+    <bean id="edaoNamed" class="com.javatpoint.jdbc.template.EmpDaoNamed">
+        <constructor-arg >
+            <ref bean="jdbcNamedTemplate"></ref>
+        </constructor-arg>
     </bean>
 
 </beans>
