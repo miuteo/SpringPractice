@@ -11,6 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class WelcomeController {
     @RequestMapping("/welcome")
     public ModelAndView welcome(){
-        return new ModelAndView("welcomepage");
+        return new ModelAndView("welcomepage","message","welcome message");
     }
 }

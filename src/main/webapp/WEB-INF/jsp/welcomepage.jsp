@@ -12,5 +12,6 @@
 </head>
 <body>
 <p>Welcome Page</p>
+<p>message is <b>${message}</b></p>
 </body>
 </html>
