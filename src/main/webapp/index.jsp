@@ -13,5 +13,7 @@
     <input type="submit" value="login">
 </form>
 <br/>
+<a href="/empform">Add Employee</a><br>
+<a href="/viewemp">View Employee</a>
 </body>
 </html>
