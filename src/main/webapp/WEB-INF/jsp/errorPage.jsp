@@ -12,6 +12,6 @@
 </head>
 <body>
 <p>${message}</p>
-<jsp:include page="/main/webapp/index.jsp"></jsp:include>
+<jsp:include page="/welcome"></jsp:include>
 </body>
 </html>

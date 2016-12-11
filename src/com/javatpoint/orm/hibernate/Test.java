@@ -25,7 +25,7 @@ public class Test {
         System.out.println(dao.getById(3));
 
         employee.setSalary(2500);
-//        dao.updateEmployee(employee);
+        dao.updateEmployee(employee);
         employee =dao.getById(3);
         System.out.println(employee);
         dao.deleteEmployee(employee);

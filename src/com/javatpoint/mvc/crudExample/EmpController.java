@@ -1,6 +1,5 @@
 package com.javatpoint.mvc.crudExample;
 
-import com.sun.javafx.sg.prism.NGShape;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.enterprise.inject.Model;
 import java.util.List;
 
 /**
@@ -25,7 +23,7 @@ public class EmpController {
     }
 
     @RequestMapping(value="/save",method = RequestMethod.POST)
-    public ModelAndView save(@ModelAttribute("emp")Emp emp){
+    public ModelAndView save(Emp emp){
         dao.save(emp);
         return new ModelAndView("redirect:/viewemp2");
     }
