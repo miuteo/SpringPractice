@@ -13,7 +13,10 @@
     <input type="submit" value="login">
 </form>
 <br/>
-<a href="/empform">Add Employee</a><br>
-<a href="/viewemp">View Employee</a>
+<a href="/empformMock">[MOCK]Add Employee</a><br>
+<a href="/viewempMock">[MOCK]View Employee</a><br>
+<a href="/empform2">Add Real Employee</a><br>
+<a href="/viewemp2">View Real Employee</a>
+
 </body>
 </html>

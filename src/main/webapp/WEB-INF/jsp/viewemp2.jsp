@@ -8,6 +8,15 @@
             <td>${emp.name}</td>
             <td>${emp.salary}</td>
             <td>${emp.designation}</td>
+            <td><a href="editemp/${emp.id}">Edit</a></td>
+            <%--<td><a href="deleteemp/${emp.id}" method="post">Delete</a></td>--%>
+            <td>
+                <form action="/deleteemp/${emp.id}" method="POST">
+                    <a href="#" onclick="this.parentNode.submit()">Delete</a>
+                </form>
+            </td>
         </tr>
     </c:forEach>
 </table>
+<br/>
+<a href="/empform2">Add new Employee</a>
