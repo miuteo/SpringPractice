@@ -38,7 +38,7 @@
     <parent><!-- prima data folosit gs.restService -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.2.RELEASE</version>
+        <version>1.5.3.RELEASE</version>
     </parent>
 
     <dependencies>
@@ -79,11 +79,19 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency><!-- gs.consumingRest -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency><!-- gs.relationalDataAcces-->
     </dependencies>
 
     <properties>
         <java.version>1.8</java.version>
-        <start-class>gs.restService.Application</start-class>
+        <start-class>gs.relationalDataAccess.Application</start-class>
     </properties>
     <repositories>
         <repository>
