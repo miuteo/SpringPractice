@@ -87,6 +87,10 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency><!-- gs.relationalDataAcces-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency><!-- gs.uploadingFile -->
     </dependencies>
 
     <properties>
