@@ -39,7 +39,7 @@ public class FileUploadController {
                         .build().toString())
                 .collect(Collectors.toList()));
 
-        return "uploadForm";
+        return "gs/uploadingFiles/uploadForm";
     }
 
     @GetMapping("/files/{filename:.+}")
