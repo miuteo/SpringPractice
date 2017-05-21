@@ -99,7 +99,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <start-class>gs.relationalDataAccess.Application</start-class>
+        <start-class>tutorials.bookmarks.Application</start-class>
     </properties>
     <repositories>
         <repository>

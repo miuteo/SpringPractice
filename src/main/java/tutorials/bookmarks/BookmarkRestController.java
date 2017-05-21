@@ -45,7 +45,8 @@ public class BookmarkRestController {
     @RequestMapping(method = RequestMethod.GET, value = "/{bookmarkId}")
     Bookmark readBookmark(@PathVariable String userId,@PathVariable Long bookmarkId){
         this.validateUser(userId);
-        return this.bookmarkRepository.findOne(bookmarkId);
+        return this.bookmarkRepository.findBookmarkByIdAndAccount_Username(bookmarkId,userId)
+                .orElseThrow(()->new BookmarkNotFoundException(userId,bookmarkId) );
     }
     private void validateUser(String userId){
         this.accountRepository.findByUsername(userId).orElseThrow(()-> new UserNotFoundException(userId));

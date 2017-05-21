@@ -83,7 +83,15 @@ public class BookmarkRestControllerTest {
 
     @Test
     public void userNotFound() throws Exception {
-        mockMvc.perform(post("/george/bookmarks/")
+        mockMvc.perform(get("/george/bookmarks/")
+                .content(this.json(new Bookmark()))
+                .contentType(contentType))
+                .andExpect(status().isNotFound());
+    }
+    @Test
+    public void bookmarkNotFound() throws Exception {
+
+        mockMvc.perform(get("/bdussault/bookmarks/19")
                 .content(this.json(new Bookmark()))
                 .contentType(contentType))
                 .andExpect(status().isNotFound());
