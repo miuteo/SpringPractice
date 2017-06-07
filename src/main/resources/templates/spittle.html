@@ -7,15 +7,11 @@
           href="/resources/style.css" />
 </head>
 <body>
-<div class="spittleView" th:each="spittle: ${spittlesList}">
-    <li th:id="spittle_+${spittle.id}">
+<div class="spittleView">
         <div class="spittleMessage" th:text="${spittle.message}"></div>
         <div>
             <span class="spittleTime" th:text="${spittle.time}"></span>
-            <span class="spittleLocation" th:text="'('+${spittle.latitude}+','+${spittle.longitude}+')'">
-            </span>
         </div>
-    </li>
 </div>
 </body>
 </html>

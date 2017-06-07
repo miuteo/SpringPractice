@@ -1,6 +1,8 @@
 package springInAction.springOnTheWeb.buildingSpringWebApp;
 
 import java.util.Date;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 /**
  * Created by teodor.miu on 07-Jun-17.
@@ -42,5 +44,15 @@ public class Spittle {
 
     public Double getLongitude() {
         return longitude;
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that, "id", "time");
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this, "id", "time");
     }
 }

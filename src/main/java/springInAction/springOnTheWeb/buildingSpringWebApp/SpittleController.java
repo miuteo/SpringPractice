@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,22 +17,27 @@ import java.util.List;
 @Controller
 @RequestMapping("/spittles")
 public class SpittleController {
+    private static final String MAX_LONG_AS_STRING = Long.MAX_VALUE+"";
+
     private SpittleRepository repository;
 
-//    @Autowired
-//    public SpittleController(SpittleRepository spittleRepository){
-//        this.repository = spittleRepository;
-//    }
+    @Autowired
+    public SpittleController(SpittleRepository spittleRepository) {
+        this.repository = spittleRepository;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String spittles(Model model){
-
-        List<Spittle> spittles= new ArrayList<Spittle>();
-        spittles.add(new Spittle("Spittle ",new Date()));
-        spittles.add(new Spittle("Spittle ",new Date()));
-        spittles.add(new Spittle("Spittle ",new Date()));
-//        model.addAttribute(repository.findSpittles(Long.MAX_VALUE,20));
-        model.addAttribute("spittles",spittles);
+    public String spittles(
+            @RequestParam(value="max", defaultValue=MAX_LONG_AS_STRING) long max,
+            @RequestParam(value="count", defaultValue="20") int count,
+            Model model){
+        model.addAttribute("spittlesList",repository.findSpittles(max, count));
         return "spittles";
+    }
+    @RequestMapping(method = RequestMethod.GET)
+    public String showSpittle(
+            @RequestParam("spittle_id") long spittleId, Model model){
+        model.addAttribute(repository.findOne(spittleId));
+        return  "spittle";
     }
 }
