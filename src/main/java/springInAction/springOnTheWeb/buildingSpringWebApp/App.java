@@ -20,8 +20,6 @@ public class App extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) {
-        SpringApplication app =
-                new SpringApplication(App.class);
-        app.run(args);
+        SpringApplication.run(App.class, args);
     }
 }
