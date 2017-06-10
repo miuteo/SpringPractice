@@ -34,7 +34,7 @@ public class SpittleController {
         model.addAttribute("spittlesList",repository.findSpittles(max, count));
         return "spittles";
     }
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/show",method = RequestMethod.GET)
     public String showSpittle(
             @RequestParam("spittle_id") long spittleId, Model model){
         model.addAttribute(repository.findOne(spittleId));

@@ -4,15 +4,21 @@ import java.util.Date;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import javax.persistence.*;
+
 /**
  * Created by teodor.miu on 07-Jun-17.
  */
+@Entity
 public class Spittle {
-    private final Long id;
-    private final String message;
-    private final Date time;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private  Long id;
+    private  String message;
+    private  Date time;
     private Double latitude;
     private Double longitude;
+    public Spittle(){}
 
     public Spittle(String message,Date time){
         this(message,time,null,null);
