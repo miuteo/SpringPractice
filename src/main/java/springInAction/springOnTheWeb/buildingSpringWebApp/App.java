@@ -25,14 +25,14 @@ import java.util.Random;
 public class App {
 
     @Bean
-    CommandLineRunner init(SpittleRepository repository){
+    CommandLineRunner init(SpittleRepository spittleRepository,SpitterRepository spitterRepository){
 //        String message,Date time,Double longitude,Double latitude
         return evt -> Arrays.asList("jhoeller,dsyer,pwebb,ogierke,rwinch,mfisher,mpollack,jlong".split(","))
                 .forEach(
                         message ->{
                             Double longitude = Math.random()*180*(Math.random()%2==0?1:-1);
                             Double latitude = Math.random()*180*(Math.random()%2==0?1:-1);
-                            Spittle account = repository.save( new Spittle(message,new Date(),longitude,latitude));
+                            Spittle account = spittleRepository.save( new Spittle(message,new Date(),longitude,latitude));
                         }
                 );
     }
