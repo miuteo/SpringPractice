@@ -7,13 +7,40 @@
           href="/resources/style.css" />
 </head>
 <body>
-<h1>Register</h1>
-<form method="post">
-    First Name: <input type="text" name="firstName"/><br/>
-    Last Name: <input type="text" name="lastName"/><br/>
-    Username: <input type="text" name="username"/><br/>
-    Password: <input type="password" name="password"/><br/>
-    <input type="submit" value="Register"/>
-</form>
+<div id="content">
+    <h1>Register</h1>
+
+    <form method="POST" th:object="${spitter}">
+        <div class="errors" th:if="${#fields.hasErrors('*')}">
+            <ul>
+                <li th:each="err : ${#fields.errors('*')}"
+                    th:text="${err}">Input is incorrect</li>
+            </ul>
+        </div>
+        <label th:class="${#fields.hasErrors('firstName')}? 'error'">First Name</label>:
+        <input type="text" th:field="*{firstName}"
+               th:class="${#fields.hasErrors('firstName')}? 'error'" /><br/>
+
+        <label th:class="${#fields.hasErrors('lastName')}? 'error'">Last Name</label>:
+        <input type="text" th:field="*{lastName}"
+               th:class="${#fields.hasErrors('lastName')}? 'error'" /><br/>
+
+        <label th:class="${#fields.hasErrors('email')}? 'error'">Email</label>:
+        <input type="text" th:field="*{email}"
+               th:class="${#fields.hasErrors('email')}? 'error'" /><br/>
+
+        <label th:class="${#fields.hasErrors('username')}? 'error'">Username</label>:
+        <input type="text" th:field="*{username}"
+               th:class="${#fields.hasErrors('username')}? 'error'" /><br/>
+
+        <label th:class="${#fields.hasErrors('password')}? 'error'">Password</label>:
+        <input type="password" th:field="*{password}"
+               th:class="${#fields.hasErrors('password')}? 'error'" /><br/>
+        <input type="submit" value="Register" />
+
+
+    </form>
+</div>
+
 </body>
 </html>
