@@ -1,4 +1,4 @@
-package springInAction.springOnTheWeb.buildingSpringWebApp;
+package springInAction.springOnTheWeb.buildingSpringWebApp.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

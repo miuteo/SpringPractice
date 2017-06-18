@@ -6,6 +6,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import springInAction.springOnTheWeb.buildingSpringWebApp.data.Spitter;
+import springInAction.springOnTheWeb.buildingSpringWebApp.data.SpitterRepository;
+import springInAction.springOnTheWeb.buildingSpringWebApp.web.SpitterController;
 
 /**
  * Created by Asus x556 on 11-Jun-17.

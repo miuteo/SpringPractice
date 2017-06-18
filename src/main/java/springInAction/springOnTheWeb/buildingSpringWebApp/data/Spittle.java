@@ -1,4 +1,4 @@
-package springInAction.springOnTheWeb.buildingSpringWebApp;
+package springInAction.springOnTheWeb.buildingSpringWebApp.data;
 
 import java.util.Date;
 import org.apache.commons.lang3.builder.EqualsBuilder;
