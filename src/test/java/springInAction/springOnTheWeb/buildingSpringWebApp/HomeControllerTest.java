@@ -51,8 +51,8 @@ public class HomeControllerTest {
                 ).build();
         mockMVC.perform(MockMvcRequestBuilders.get("/spittles"))
                 .andExpect(MockMvcResultMatchers.view().name("spittles"))
-                .andExpect(MockMvcResultMatchers.model().attributeExists("spittlesList"))
-                .andExpect(MockMvcResultMatchers.model().attribute("spittlesList",
+                .andExpect(MockMvcResultMatchers.model().attributeExists("spittleList"))
+                .andExpect(MockMvcResultMatchers.model().attribute("spittleList",
                         hasItems(expectedSpittles.toArray())));
     }
 
@@ -71,8 +71,8 @@ public class HomeControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/spittles?max=30&count=50"))
                 .andExpect(MockMvcResultMatchers.view().name("spittles"))
-                .andExpect(MockMvcResultMatchers.model().attributeExists("spittlesList"))
-                .andExpect(MockMvcResultMatchers.model().attribute("spittlesList",
+                .andExpect(MockMvcResultMatchers.model().attributeExists("spittleList"))
+                .andExpect(MockMvcResultMatchers.model().attribute("spittleList",
                         hasItems(expectedSpittles.toArray())));
     }
 

@@ -7,7 +7,7 @@
           href="/resources/style.css" />
 </head>
 <body>
-<div class="spittleView" th:each="spittle: ${spittlesList}">
+<div class="spittleView" th:each="spittle: ${spittleList}">
     <li th:id="spittle_+${spittle.id}">
         <div class="spittleMessage" th:text="${spittle.message}"></div>
         <div>
