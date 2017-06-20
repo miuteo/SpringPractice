@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import springInAction.springOnTheWeb.buildingSpringWebApp.data.Spitter;
 import springInAction.springOnTheWeb.buildingSpringWebApp.data.SpitterRepository;
+import springInAction.springOnTheWeb.buildingSpringWebApp.data.StorageService;
+
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
 
 import javax.validation.Valid;
 
@@ -23,11 +27,14 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/spitter")
 public class SpitterController {
-    SpitterRepository repository;
+    private final SpitterRepository repository;
+    private final StorageService storageService;
 
     @Autowired
-    public SpitterController(SpitterRepository repository){
+    public SpitterController(SpitterRepository repository,StorageService storageService){
+
         this.repository=repository;
+        this.storageService = storageService;
     }
 
     @RequestMapping(value = "/register",method = RequestMethod.GET)
@@ -48,15 +55,12 @@ public class SpitterController {
 public String processRegistration(@Valid  SpitterForm spitterForm, Errors errors) throws IllegalStateException,IOException {
 
         if(errors.hasErrors()){
-//        model.addAttribute(new Spitter());
-//        model.addAttribute("spitter",spitterForm);
-//        model.addAttribute("fields",errors);
         return "registerForm";
     }
     Spitter spitter = spitterForm.toSpitter();
     repository.save(spitter);
     MultipartFile profilePicture = spitterForm.getProfilePicture();
-    profilePicture.transferTo(new File("/tmp/spittr/"+spitter.getUsername()+".jpg"));
+    storageService.store(profilePicture);
     return "redirect:/spitter/"+spitter.getUsername()+"/";
 }
     @RequestMapping(value="/{username}")

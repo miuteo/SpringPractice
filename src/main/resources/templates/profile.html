@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Profile</title>
+    <link rel="stylesheet"
+          type="text/css"
+          th:href="@{/resources/style.css}"></link>
 </head>
 <body>
+<div id="header" th:include="page :: header"></div>
+<div id="content">
 <h1>Your Profile</h1>
 <div th:text="${spitter.username}"/><br/>
 <div th:text="${spitter.firstName}"/><br/>
 <div th:text="${spitter.lastName}"/><br/>
+</div>
+<div id="footer" th:include="page :: copy"></div>
 </body>
 </html>

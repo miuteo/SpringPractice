@@ -4,9 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import springInAction.springOnTheWeb.buildingSpringWebApp.data.SpitterRepository;
-import springInAction.springOnTheWeb.buildingSpringWebApp.data.Spittle;
-import springInAction.springOnTheWeb.buildingSpringWebApp.data.SpittleRepository;
+import springInAction.springOnTheWeb.buildingSpringWebApp.data.*;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -16,10 +14,15 @@ import java.util.Date;
  */
 @SpringBootApplication
 public class App {
+    @Bean
+    StorageService storageService(){
+        return new FileSystemStorageService(new StorageProperties());
+    }
 
     @Bean
-    CommandLineRunner init(SpittleRepository spittleRepository, SpitterRepository spitterRepository){
-//        String message,Date time,Double longitude,Double latitude
+    CommandLineRunner init(SpittleRepository spittleRepository, StorageService storageService){
+        storageService.deleteAll();
+        storageService.init();
         return evt -> Arrays.asList("jhoeller,dsyer,pwebb,ogierke,rwinch,mfisher,mpollack,jlong".split(","))
                 .forEach(
                         message ->{
