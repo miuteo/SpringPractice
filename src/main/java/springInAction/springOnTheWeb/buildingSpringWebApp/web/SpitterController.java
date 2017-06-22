@@ -67,6 +67,9 @@ public String processRegistration(@Valid  SpitterForm spitterForm, Errors errors
     public String showSpitterProfile(@PathVariable("username")String username,Model model){
         if(!model.containsAttribute("spitter")){
             Spitter spitter = repository.findByUsername(username);
+            if(spitter==null){
+                return "redirect:/";
+            }
             model.addAttribute(spitter);
         }
         return "profile";
