@@ -40,6 +40,9 @@
         <input type="file"
                name="profilePicture"
                accept="image/jpeg,image/png,image/gif" /><br/>
+        <input type="hidden"
+               th:name="${_csrf.parameterName}"
+               th:value="${_csrf.token}" />
         <input type="submit" value="Register" />
 
 

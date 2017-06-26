@@ -18,11 +18,12 @@ public class App {
     StorageService storageService(){
         return new FileSystemStorageService(new StorageProperties());
     }
-
     @Bean
-    CommandLineRunner init(SpittleRepository spittleRepository, StorageService storageService){
+    CommandLineRunner init(SpittleRepository spittleRepository,SpitterRepository spitterRepository, StorageService storageService){
         storageService.deleteAll();
         storageService.init();
+        spitterRepository.save(new Spitter("admin", "admin", "teodor",
+                "miumiu", "teodor.miu@gmail.com"));
         return evt -> Arrays.asList("jhoeller,dsyer,pwebb,ogierke,rwinch,mfisher,mpollack,jlong".split(","))
                 .forEach(
                         message ->{

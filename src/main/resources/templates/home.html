@@ -11,6 +11,7 @@
 <body>
 <div sec:authorize="isAuthenticated()">
     Hello there...<span sec:authentication="name">user-name</span>
+    <sec:authentication property="principal.username" />
 </div>
 <div id="header" th:include="page :: header"></div>
 <div id="content">

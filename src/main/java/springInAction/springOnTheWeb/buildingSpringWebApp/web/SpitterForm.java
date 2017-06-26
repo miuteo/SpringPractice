@@ -20,11 +20,11 @@ public class SpitterForm {
     private String password;
 
     @NotNull
-    @Size(min=5, max=16, message="{firstName.size}")
+    @Size(min=3, max=16, message="{firstName.size}")
     private String firstName;
 
     @NotNull
-    @Size(min=5, max=16, message="{lastName.size}")
+    @Size(min=3, max=16, message="{lastName.size}")
     private String lastName;
 
     @NotNull
