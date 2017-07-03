@@ -10,7 +10,9 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 import springInAction.hittingTheDBwithSpringandJDBC.domain.db.SpitterRepository;
+import springInAction.hittingTheDBwithSpringandJDBC.domain.db.SpittleRepository;
 import springInAction.hittingTheDBwithSpringandJDBC.domain.db.hibernate5.HibernateSpitterRepository;
+import springInAction.hittingTheDBwithSpringandJDBC.domain.db.hibernate5.HibernateSpittleRepository;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
@@ -65,8 +67,12 @@ public class Hibernate5Config implements TransactionManagementConfigurer{
     }
 
     @Bean
-    public SpitterRepository spittleRepository(SessionFactory sessionFactory) {
+    public SpitterRepository spitterRepository(SessionFactory sessionFactory) {
         return new HibernateSpitterRepository(sessionFactory);
+    }
+    @Bean
+    public SpittleRepository spittleRepository(SessionFactory sessionFactory){
+        return new HibernateSpittleRepository(sessionFactory);
     }
 
 
