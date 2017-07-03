@@ -20,6 +20,7 @@ public interface SpittleRepository {
     Spittle save(Spittle spittle);
 
     List<Spittle> findBySpitterId(long spitterId);
+    List<Spittle> findAll();
 
     void delete(long id);
 }

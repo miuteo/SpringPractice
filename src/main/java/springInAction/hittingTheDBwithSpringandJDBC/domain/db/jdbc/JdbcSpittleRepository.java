@@ -74,6 +74,11 @@ public class JdbcSpittleRepository implements SpittleRepository{
     }
 
     @Override
+    public List<Spittle> findAll() {
+        return jdbcTemplate.query(SELECT_SPITTLE,new SpittleRowMapper());
+    }
+
+    @Override
     public void delete(long id) {
         jdbcTemplate.update("delete from Spittle where id=?", id);
     }

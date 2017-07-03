@@ -54,6 +54,12 @@ public class JdbcSpittleRepositoryTest {
         Assert.assertTrue(thirteen.getSpitter().isUpdateByEmail());
     }
 
+    @Test
+    public void findAll(){
+        List<Spittle> all = spittleRepository.findAll();
+        Assert.assertEquals(15,all.size());
+    }
+
 
 
 
