@@ -39,7 +39,14 @@ public class JpaSpittleRepository implements SpittleRepository {
 
     @Override
     public Spittle save(Spittle spittle) {
-        entityManager.persist(spittle);
+        if(spittle!=null){
+            if(spittle.getId()==null){
+                entityManager.persist(spittle);
+            }else{
+                entityManager.merge(spittle);
+            }
+        }
+
         return spittle;
     }
 

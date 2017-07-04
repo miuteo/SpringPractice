@@ -25,7 +25,14 @@ public class JpaSpitterRepository implements SpitterRepository {
 
     @Override
     public Spitter save(Spitter spitter) {
-        entityManager.persist(spitter);
+        if(spitter!=null){
+
+            if(spitter.getId()==null){
+                entityManager.persist(spitter);
+            }else{
+                entityManager.merge(spitter);
+            }
+        }
         return spitter;
     }
 
