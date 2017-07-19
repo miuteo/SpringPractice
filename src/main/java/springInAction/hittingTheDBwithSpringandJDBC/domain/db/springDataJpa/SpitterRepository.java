@@ -10,4 +10,7 @@ import springInAction.hittingTheDBwithSpringandJDBC.domain.Spitter;
 public interface SpitterRepository extends JpaRepository<Spitter,Long> {
 //    long count();
 
+    Spitter findOne(long id);
+    Spitter findByUsername(String username);
+
 }
