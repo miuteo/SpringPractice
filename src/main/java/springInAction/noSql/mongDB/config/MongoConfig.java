@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
-@EnableMongoRepositories(basePackages = "springInAction.noSql.mongDB")
+@EnableMongoRepositories(basePackages = "springInAction.noSql.mongDB.db")
 public class MongoConfig extends AbstractMongoConfiguration{
 
     @Override
