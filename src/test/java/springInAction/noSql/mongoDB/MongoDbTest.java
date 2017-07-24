@@ -73,8 +73,9 @@ public class MongoDbTest {
         Assert.assertEquals("Chuck Wagon", chucksOrders2.get(0).getCustomer());
         Assert.assertEquals(2, chucksOrders2.get(0).getItems().size());
 
-
-
+        savedOrder.setType("AAA");
+        orderRepository.save(savedOrder);
+        Assert.assertEquals(1, orderRepository.count());
         // Deleting an order
         orderRepository.delete(savedOrder.getId());
         Assert.assertEquals(0, orderRepository.count());
